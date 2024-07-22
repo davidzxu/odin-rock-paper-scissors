@@ -1,19 +1,19 @@
 function getComputerChoice() {
-    let computerChoice = "rock";
-    // let randomNum = Math.ceil(Math.random() * 3);
-    // if (randomNum === 1) {
-    //     computerChoice = "rock";
-    // } else if (randomNum === 2) {
-    //     computerChoice = "paper";
-    // } else {
-    //     computerChoice = "scissors";
-    // }
+    let computerChoice = "";
+    let randomNum = Math.ceil(Math.random() * 3);
+    if (randomNum === 1) {
+        computerChoice = "rock";
+    } else if (randomNum === 2) {
+        computerChoice = "paper";
+    } else {
+        computerChoice = "scissors";
+    }
 
     return computerChoice;
 }
 
 function getHumanChoice() {
-    let humanChoice = prompt("Rock, paper, or scissors? Type q to quit.", "");
+    let humanChoice = prompt("Rock, paper, or scissors?", "");
     return humanChoice;
 }
 
@@ -98,7 +98,23 @@ function playRound(computerChoice, humanChoice) {
     }
 }
 
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        playRound(getComputerChoice(), getHumanChoice());
+        console.log(
+            `Your score: ${humanScore}\nComputer score: ${computerScore}`
+        );
+    }
+    if (humanScore < computerScore) {
+        console.log("GAME RESULT: LOSS");
+    } else if (humanScore === computerScore) {
+        console.log("GAME RESULT: TIE");
+    } else {
+        console.log("GAME RESULT: WIN!!!");
+    }
+}
+
 let humanScore = 0;
 let computerScore = 0;
 
-playRound(getComputerChoice(), getHumanChoice());
+playGame();
