@@ -17,28 +17,11 @@ function playRound(computerChoice, humanChoice) {
     const linebreak = document.createElement("br");
 
     if (humanScore === 5 || computerScore === 5) {
-        humanScore = 0;
-        computerScore = 0;
-        while (results.firstChild) {
-            results.removeChild(results.lastChild);
-        }
-    }
-
-    // Player enters an invalid choice
-    if (
-        humanChoice === null ||
-        (humanChoice.toLowerCase() !== "rock" &&
-            humanChoice.toLowerCase() !== "r" &&
-            humanChoice.toLowerCase() !== "paper" &&
-            humanChoice.toLowerCase() !== "p" &&
-            humanChoice.toLowerCase() !== "scissors" &&
-            humanChoice.toLowerCase() !== "s")
-    ) {
-        console.log("You entered an invalid choice. Try again.");
+        resetGame();
     }
 
     // All iterations of player choosing rock
-    else if (
+    if (
         humanChoice.toLowerCase() === "rock" ||
         humanChoice.toLowerCase() === "r"
     ) {
@@ -88,6 +71,9 @@ function playRound(computerChoice, humanChoice) {
     results.appendChild(div);
     results.appendChild(linebreak);
 
+    humanScoreDisplay.textContent = `You: ${humanScore}`;
+    computerScoreDisplay.textContent = `Cpu: ${computerScore}`;
+
     if (humanScore === 5 || computerScore === 5) {
         determineWinner();
     }
@@ -106,6 +92,16 @@ function determineWinner() {
     results.appendChild(gameEndMsg);
 }
 
+function resetGame() {
+    humanScore = 0;
+    computerScore = 0;
+    humanScoreDisplay.textContent = `You: ${humanScore}`;
+    computerScoreDisplay.textContent = `Cpu: ${computerScore}`;
+    while (results.childNodes.length > 5) {
+        results.removeChild(results.lastChild);
+    }
+}
+
 let humanScore = 0;
 let computerScore = 0;
 
@@ -113,11 +109,15 @@ const results = document.querySelector(".results");
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
+const reset = document.querySelector(".reset");
+const humanScoreDisplay = document.querySelector(".humanScore");
+const computerScoreDisplay = document.querySelector(".computerScore");
 
 rock.addEventListener("click", () => playRound(getComputerChoice(), "rock"));
 paper.addEventListener("click", () => playRound(getComputerChoice(), "paper"));
 scissors.addEventListener("click", () =>
     playRound(getComputerChoice(), "scissors")
 );
+reset.addEventListener("click", () => resetGame());
 
 // playGame();
