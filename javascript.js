@@ -66,7 +66,7 @@ function resetGame() {
     computerScore = 0;
     humanScoreDisplay.textContent = `You: ${humanScore}`;
     computerScoreDisplay.textContent = `Cpu: ${computerScore}`;
-    while (results.childNodes.length > 5) {
+    while (results.childNodes.length > 3) {
         results.removeChild(results.lastChild);
     }
 }

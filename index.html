@@ -10,36 +10,47 @@
     <body>
         <h1>Rock Paper Scissors</h1>
 
-        <!-- create left side/right side (game log) -->
-        <div class="btn-container">
-            <div class="small-containers">
-                <img src="images/rock-image.jpg" alt="Rock" width="200px" />
-                <button class="rock">Rock</button>
+        <div class="content">
+            <div class="left-side">
+                <div class="player-choices">
+                    <div class="small-containers">
+                        <img
+                            src="images/rock-image.jpg"
+                            alt="Rock"
+                            width="200px"
+                        />
+                        <button class="rock">Rock</button>
+                    </div>
+                    <div class="small-containers">
+                        <img
+                            src="images/paper-image.jpg"
+                            alt="Paper"
+                            width="200px"
+                        />
+                        <button class="paper">Paper</button>
+                    </div>
+                    <div class="small-containers">
+                        <img
+                            src="images/scissors-image.jpg"
+                            alt="Scissors"
+                            width="200px"
+                        />
+                        <button class="scissors">Scissors</button>
+                    </div>
+                </div>
+                <div>
+                    <h2>Score:</h2>
+                    <div class="scores">
+                        <h4 class="humanScore">You: 0</h4>
+                        <h4 class="computerScore">Cpu: 0</h4>
+                    </div>
+                </div>
+                <div class="reset-container">
+                    <button class="reset">Reset</button>
+                </div>
             </div>
-            <div class="small-containers">
-                <img src="images/paper-image.jpg" alt="Paper" width="200px" />
-                <button class="paper">Paper</button>
-            </div>
-            <div class="small-containers">
-                <img
-                    src="images/scissors-image.jpg"
-                    alt="Scissors"
-                    width="200px"
-                />
-                <button class="scissors">Scissors</button>
-            </div>
-            <div class="small-containers">
-                <button class="reset">Reset</button>
-            </div>
-        </div>
 
-        <div class="results">
-            <div>
-                <h2>Score:</h2>
-                <h4 class="humanScore">You: 0</h4>
-                <h4 class="computerScore">Cpu: 0</h4>
-            </div>
-            <div>
+            <div class="results">
                 <h2>Game Log</h2>
             </div>
         </div>
