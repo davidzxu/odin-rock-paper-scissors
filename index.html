@@ -4,16 +4,33 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Rock Paper Scissors</title>
-        <link rel="shortcut icon" href="#" />
+        <link rel="stylesheet" href="./styles.css" />
         <script src="./javascript.js" defer></script>
     </head>
     <body>
         <h1>Rock Paper Scissors</h1>
+
+        <!-- create left side/right side (game log) -->
         <div class="btn-container">
-            <button class="rock">Rock</button>
-            <button class="paper">Paper</button>
-            <button class="scissors">Scissors</button>
-            <button class="reset">Reset</button>
+            <div class="small-containers">
+                <img src="images/rock-image.jpg" alt="Rock" width="200px" />
+                <button class="rock">Rock</button>
+            </div>
+            <div class="small-containers">
+                <img src="images/paper-image.jpg" alt="Paper" width="200px" />
+                <button class="paper">Paper</button>
+            </div>
+            <div class="small-containers">
+                <img
+                    src="images/scissors-image.jpg"
+                    alt="Scissors"
+                    width="200px"
+                />
+                <button class="scissors">Scissors</button>
+            </div>
+            <div class="small-containers">
+                <button class="reset">Reset</button>
+            </div>
         </div>
 
         <div class="results">
